@@ -2,7 +2,7 @@
   <q-page padding>
     <div class="q-pa-md" style="max-width:800px;">
       <q-table
-        title="Lista de Papéis"
+        title="Lista de Perfis"
         :loading="loadingTable"
         :data="roles"
         :columns="columns"
