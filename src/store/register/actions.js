@@ -7,7 +7,7 @@ export function insert (context, payload) {
     return Vue.prototype.$axios
       .post(`${REGISTER_ROUTE}`, payload)
       .then(res => resolve(res.data))
-      .catch(err => reject(err.response.data))
+      .catch(err => reject(err.response))
   })
   return p
 }

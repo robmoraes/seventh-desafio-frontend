@@ -110,13 +110,21 @@ export default {
           this.$root.$emit('hideDialogRegister')
         })
         .catch(err => {
-          this.$q.notify({ color: 'negative', message: 'Erro ao tentar incluir registro!' })
-          console.log(err.response)
+          if (err) {
+            if (err.status === 422) {
+              console.log(err.data.errors)
+              Object.keys(err.data.errors).forEach(itemKey => {
+                const element = err.data.errors[itemKey]
+                element.map((value, index) => {
+                  this.$q.notify({ color: 'negative', position: 'top', message: value })
+                })
+              })
+            } else {
+              this.$q.notify({ color: 'negative', position: 'top', message: 'Erro ao tentar incluir registro!' })
+            }
+          }
         })
     }
-  },
-  mounted () {
-    //
   }
 }
 </script>

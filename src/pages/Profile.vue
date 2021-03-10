@@ -84,13 +84,17 @@ export default {
         })
         .catch(err => {
           if (err) {
-            this.$q.notify({
-              color: 'negative',
-              message: 'Ocorreu algum problema ao tentar atualizar o perfil.',
-              icon: 'report_problem',
-              position: 'top'
-            })
-            console.error(err.data.message)
+            if (err.status === 422) {
+              console.log(err.data.errors)
+              Object.keys(err.data.errors).forEach(itemKey => {
+                const element = err.data.errors[itemKey]
+                element.map((value, index) => {
+                  this.$q.notify({ color: 'negative', position: 'top', message: value })
+                })
+              })
+            } else {
+              this.$q.notify({ color: 'negative', position: 'top', message: 'Erro ao tentar atualizar o perfil!' })
+            }
           }
         })
     }

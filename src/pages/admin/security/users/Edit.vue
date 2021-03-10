@@ -104,12 +104,22 @@ export default {
         })
         .catch(err => {
           if (err) {
-            this.$q.notify({
-              color: 'negative',
-              message: `Ocorreu algum problema ao tentar editar o registro. ${err.data.message}`,
-              icon: 'report_problem',
-              position: 'top'
-            })
+            if (err.status === 422) {
+              console.log(err.data.errors)
+              Object.keys(err.data.errors).forEach(itemKey => {
+                const element = err.data.errors[itemKey]
+                element.map((value, index) => {
+                  this.$q.notify({ color: 'negative', position: 'top', message: value })
+                })
+              })
+            } else {
+              this.$q.notify({
+                color: 'negative',
+                message: `Ocorreu algum problema ao tentar editar o registro. ${err.data.message}`,
+                icon: 'report_problem',
+                position: 'top'
+              })
+            }
           }
         })
     },

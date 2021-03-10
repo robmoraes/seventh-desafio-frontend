@@ -17,7 +17,7 @@ export function update (context, payload) {
     return Vue.prototype.$axios
       .put(`${PROFILE_ROUTE}`, payload)
       .then(res => resolve(res.data))
-      .catch(err => reject(err.response.data))
+      .catch(err => reject(err.response))
   })
   return p
 }
