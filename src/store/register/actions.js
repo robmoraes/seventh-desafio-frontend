@@ -1,6 +1,6 @@
 import Vue from 'vue'
 
-const REGISTER_ROUTE = 'register'
+const REGISTER_ROUTE = 'signup'
 
 export function insert (context, payload) {
   const p = new Promise((resolve, reject) => {

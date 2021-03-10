@@ -18,7 +18,7 @@
                 </q-card-actions>
                 <q-card-section class="text-center q-pa-none">
                     <p class="text-grey-6">
-                      Not registered? <a @click="openRegister=true" href="javascript:void(0)">Created an Account</a>
+                      Sem cadastro? <a @click="openRegister=true" href="javascript:void(0)">Crie sua conta</a>
                     </p>
                 </q-card-section>
                 </q-card>
