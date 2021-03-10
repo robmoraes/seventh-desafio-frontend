@@ -82,6 +82,19 @@ E já pode ser acessado pela URL configurada.
 
 As credênciais de acesso podem ser obtidas após a instalação da aplicação backend.
 
+## Degustação
+
+Mas como o processo de instalação é relativamente longo, preparei um ambiente de degustação para que possam avaliar. Para isso, publiquei o build do frontend na estrutura de views do laravel e fiz um pequeno ajuste nas rotas do laravel (/routes/web.php) para resolver as uris do front. Sendo assim a API e o Front rodam sob mesmo domínio, mas a construção foi completamente desacoplada.
+
+- [Playground do desafio](https://api.seventh.seemann.com.br)
+
+Lembrando:
+
+- e-mail: desafio@seventh.com.br
+- senha: 12345678
+
+
+
 ### Build da aplicação para produção
 
 ```bash
