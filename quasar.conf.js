@@ -47,7 +47,7 @@ module.exports = function (ctx) {
       env: {
         API: ctx.dev
           ? 'http://api.seventh.local/api'
-          : 'http://api.seventh.local/api' // Informar URL de Produção para API
+          : 'http://api.seventh.local/api' // URL que será usada no BUILD
       },
       vueRouterMode: 'history', // available values: 'hash', 'history'
 
