@@ -89,9 +89,10 @@ export default {
           this.loadingTable = false
         })
         .catch(err => {
+          console.log(err)
           this.$q.notify({
             color: 'negative',
-            message: `Ocorreu algum problema ao tentar lista os registros. [${err}]`,
+            message: `Ocorreu algum problema ao tentar lista os registros. [${err.status} ${err.data.message}]`,
             icon: 'report_problem',
             position: 'top'
           })

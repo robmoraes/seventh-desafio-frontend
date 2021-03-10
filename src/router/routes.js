@@ -9,6 +9,7 @@ const routes = [
       { path: 'admin/security/roles/create', component: () => import('pages/admin/security/roles/Create.vue') },
       { path: 'admin/security/roles/:id/edit', component: () => import('pages/admin/security/roles/Edit.vue') },
       { path: 'admin/security/users', component: () => import('pages/admin/security/users/List.vue') },
+      { path: 'admin/security/users/:id/edit', component: () => import('pages/admin/security/users/Edit.vue') },
       { path: 'profile', component: () => import('pages/Profile.vue') }
     ],
     meta: { requiresAuth: true }
