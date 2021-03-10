@@ -7,7 +7,6 @@
         <img src="~/assets/icon-512x512.png" style="max-width: 18px;position:relative;top:0px;">
         <div class="desktop-only">Desafio Seventh</div>
         <q-space />
-        <q-btn flat @click="onDepartamento">{{departamentoAtivo}}</q-btn>
         <q-separator spaced vertical dark />
         <q-btn v-if="!$q.dark.isActive" flat icon="nights_stay" label="" @click="changeMode">
           <q-tooltip>
@@ -27,10 +26,12 @@
         <div class="absolute-bottom bg-transparent">
           <q-avatar size="56px" class="q-mb-sm">
             <img :src="auth.userGravatar" alt="" srcset="">
-            <!-- <img src="https://cdn.quasar.dev/img/boy-avatar.png"> -->
           </q-avatar>
           <div class="text-weight-bold">{{ auth.user.name }}</div>
           <div style="font-size: 12px;">{{ auth.user.email }}</div>
+          <router-link tag="a" class="item item-link" to="/profile">
+            <a href="javascript:void(0)" class="text-white" style="font-size:12px;">Veja seu perfil</a>
+          </router-link>
         </div>
       </q-img>
       <q-scroll-area class="q-pa-sm" style="height: calc(100% - 150px); margin-top: 150px;">
