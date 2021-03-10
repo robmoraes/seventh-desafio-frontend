@@ -45,6 +45,10 @@
           <q-item clickable v-ripple to="/admin/security/permissions">
             <q-item-section>Permissões</q-item-section>
           </q-item>
+          <q-separator />
+          <q-item clickable v-ripple to="/admin/activities">
+            <q-item-section>Log de atividades</q-item-section>
+          </q-item>
         </q-list>
         <q-separator />
         <logout></logout>
