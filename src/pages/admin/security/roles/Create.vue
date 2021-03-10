@@ -1,7 +1,7 @@
 <template>
   <q-card style="max-width:600px; width:100%;">
     <q-card-section>
-      <div class="text-h6">Criar Papel</div>
+      <div class="text-h6">Criar Perfil</div>
     </q-card-section>
 
     <q-card-section class="q-pt-none">

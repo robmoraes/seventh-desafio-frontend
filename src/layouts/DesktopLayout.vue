@@ -36,8 +36,11 @@
       </q-img>
       <q-scroll-area class="q-pa-sm" style="height: calc(100% - 150px); margin-top: 150px;">
         <q-list>
+          <q-item clickable v-ripple to="/admin/security/users">
+            <q-item-section>Usuários</q-item-section>
+          </q-item>
           <q-item clickable v-ripple to="/admin/security/roles">
-            <q-item-section>Papéis</q-item-section>
+            <q-item-section>Perfis</q-item-section>
           </q-item>
           <q-item clickable v-ripple to="/admin/security/permissions">
             <q-item-section>Permissões</q-item-section>

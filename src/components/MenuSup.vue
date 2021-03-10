@@ -7,7 +7,7 @@
         <q-menu auto-close>
           <q-list dense style="min-width: 100px">
             <q-item clickable>
-              <q-item-section>Papéis</q-item-section>
+              <q-item-section>Perfis</q-item-section>
             </q-item>
             <q-item clickable>
               <q-item-section>Permissões</q-item-section>

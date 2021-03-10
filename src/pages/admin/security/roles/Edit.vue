@@ -2,7 +2,7 @@
   <q-page padding>
     <q-card style="max-width:600px; width:100%;">
       <q-card-section>
-        <div class="text-h6">Editar Papel</div>
+        <div class="text-h6">Editar Perfil</div>
       </q-card-section>
 
       <q-card-section class="q-pt-none">
