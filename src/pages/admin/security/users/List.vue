@@ -32,7 +32,7 @@
               :key="col.name"
               :props="props"
             >
-              {{ col.name }}
+              {{ col.label }}
             </q-th>
             <q-th></q-th>
           </q-tr>
@@ -49,7 +49,7 @@
             </q-td>
             <q-td align="center">
               <q-btn class="q-mr-sm" size="sm" color="accent" round dense icon="edit" @click="editClick(props.row)"></q-btn>
-              <q-btn size="sm" color="red" round dense icon="remove" @click="destroyClick(props.row)"></q-btn>
+              <!-- <q-btn size="sm" color="red" round dense icon="remove" @click="destroyClick(props.row)"></q-btn> -->
             </q-td>
           </q-tr>
         </template>
@@ -57,7 +57,7 @@
     </div>
 
     <q-page-sticky position="bottom-right" :offset="[18, 18]">
-      <q-btn fab icon="add" color="accent" @click="addClick" />
+      <!-- <q-btn fab icon="add" color="accent" @click="addClick" /> -->
       <q-btn fab icon="refresh" color="primary" @click="listRecords()" />
     </q-page-sticky>
   </q-page>

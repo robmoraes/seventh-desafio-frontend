@@ -145,14 +145,14 @@ export default {
         {
           name: 'name',
           required: true,
-          label: 'Name',
+          label: 'Nome',
           align: 'left',
           field: row => row.name,
           format: val => `${val}`,
           sortable: true
         },
-        { name: 'label', align: 'left', label: 'Label', field: 'label', sortable: true },
-        { name: 'category', align: 'left', label: 'Category', field: 'category', sortable: true }
+        { name: 'label', align: 'left', label: 'Rótulo', field: 'label', sortable: true },
+        { name: 'category', align: 'left', label: 'Categoria', field: 'category', sortable: true }
       ]
     }
   },

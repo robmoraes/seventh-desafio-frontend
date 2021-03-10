@@ -39,12 +39,12 @@
           <q-item clickable v-ripple to="/admin/security/users">
             <q-item-section>Usuários</q-item-section>
           </q-item>
-          <q-item clickable v-ripple to="/admin/security/roles">
+          <!-- <q-item clickable v-ripple to="/admin/security/roles">
             <q-item-section>Perfis</q-item-section>
-          </q-item>
-          <q-item clickable v-ripple to="/admin/security/permissions">
+          </q-item> -->
+          <!-- <q-item clickable v-ripple to="/admin/security/permissions">
             <q-item-section>Permissões</q-item-section>
-          </q-item>
+          </q-item> -->
           <q-separator />
           <q-item clickable v-ripple to="/admin/activities">
             <q-item-section>Log de atividades</q-item-section>
