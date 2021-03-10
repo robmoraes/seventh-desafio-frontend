@@ -179,7 +179,7 @@ export default {
           if (err) {
             this.$q.notify({
               color: 'negative',
-              message: `Ocorreu um erro no sistema. [${err.response.status}]`,
+              message: `Ocorreu algum problema ao tentar exibir a lista. [${err.status} ${err.data.message}]`,
               icon: 'report_problem',
               position: 'top'
             })
@@ -215,7 +215,7 @@ export default {
           if (err) {
             this.$q.notify({
               color: 'negative',
-              message: `Ocorreu um erro no sistema. [${err.response.status}]`,
+              message: `Ocorreu um erro no sistema. [${err.status}]`,
               icon: 'report_problem',
               position: 'top'
             })
@@ -249,7 +249,7 @@ export default {
           if (err) {
             this.$q.notify({
               color: 'negative',
-              message: `Ocorreu um erro no sistema. [${err.response.status}]`,
+              message: `Ocorreu um erro no sistema. [${err.status}]`,
               icon: 'report_problem',
               position: 'top'
             })
@@ -275,7 +275,7 @@ export default {
           if (err) {
             this.$q.notify({
               color: 'negative',
-              message: `Ocorre um erro no sistema. [${err.response.status}]`,
+              message: `Ocorre um erro no sistema. [${err.status}]`,
               icon: 'report_problem',
               position: 'top'
             })

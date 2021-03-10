@@ -103,7 +103,7 @@ export default {
         .catch(err => {
           this.$q.notify({
             color: 'negative',
-            message: `Ocorreu algum problema ao tentar excluir o registro. [${err}]`,
+            message: `Ocorreu algum problema ao tentar exibir a lista. [${err.status} ${err.data.message}]`,
             icon: 'report_problem',
             position: 'top'
           })

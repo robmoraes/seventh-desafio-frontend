@@ -17,7 +17,9 @@
                     <q-btn unelevated color="primary" size="lg" class="full-width" label="Login" type="submit" />
                 </q-card-actions>
                 <q-card-section class="text-center q-pa-none">
-                    <p class="text-grey-6">Not registered? Created an Account</p>
+                    <p class="text-grey-6">
+                      Not registered? <a @click="openRegister=true" href="javascript:void(0)">Created an Account</a>
+                    </p>
                 </q-card-section>
                 </q-card>
                 </q-form>
@@ -25,18 +27,26 @@
             </div>
         </q-page>
     </q-page-container>
+    <q-dialog id="registerDialog" persistent :maximized="$q.platform.is.mobile" v-model="openRegister">
+      <Register/>
+    </q-dialog>
   </q-layout>
 </template>
 
 <script>
+import Register from 'components/Register.vue'
 export default {
   name: 'LoginLayout',
+  components: {
+    Register
+  },
   data () {
     return {
       credentials: {
         username: '',
         password: ''
-      }
+      },
+      openRegister: false
     }
   },
   methods: {
@@ -58,7 +68,13 @@ export default {
             })
           }
         })
+    },
+    hideDialogRegisterCallback () {
+      this.openRegister = false
     }
+  },
+  created () {
+    this.$root.$on('hideDialogRegister', this.hideDialogRegisterCallback)
   }
 }
 </script>

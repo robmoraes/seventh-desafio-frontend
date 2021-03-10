@@ -5,6 +5,7 @@ import auth from './auth'
 import permissions from './admin/security/permissions'
 import roles from './admin/security/roles'
 import users from './admin/security/users'
+import register from './register'
 
 Vue.use(Vuex)
 
@@ -23,7 +24,8 @@ export default function (/* { ssrContext } */) {
       auth,
       permissions,
       roles,
-      users
+      users,
+      register
     },
 
     // enable strict mode (adds overhead!)

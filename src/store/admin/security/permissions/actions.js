@@ -12,7 +12,7 @@ export function setList (context, obj) {
         resolve(res)
       })
       .catch(err => {
-        reject(err)
+        reject(err.response)
       })
   })
   return p
@@ -26,7 +26,7 @@ export function post (context, payload) {
         resolve(res)
       })
       .catch(err => {
-        reject(err)
+        reject(err.response)
       })
   })
   return p
@@ -40,7 +40,7 @@ export function put (context, payload) {
         resolve(res)
       })
       .catch(err => {
-        reject(err)
+        reject(err.response)
       })
   })
   return p
@@ -54,7 +54,7 @@ export function destroy (context, payload) {
         resolve(res)
       })
       .catch(err => {
-        reject(err)
+        reject(err.response)
       })
   })
   return p
