@@ -52,17 +52,25 @@
                   val => val.length <= 255 || 'Use no máximo 255 caracteres'
                 ]"
               />
+
               <q-input
-                filled
                 v-model="record.password"
+                lazy-rules filled :type="isPwd ? 'password' : 'text'"
                 label="Senha *"
-                lazy-rules
-                hint="Máximo 255 caracteres"
+                hint="Use pelo menos 8 e máximo de 255 caracteres"
                 :rules="[
-                  val => val && val.length > 0 || 'Digite algo',
+                  val => val && val.length > 7 || 'Digite pelo menos 8 caracteres',
                   val => val.length <= 255 || 'Use no máximo 255 caracteres'
                 ]"
-              />
+                >
+                <template v-slot:append>
+                  <q-icon
+                    :name="isPwd ? 'visibility_off' : 'visibility'"
+                    class="cursor-pointer"
+                    @click="isPwd = !isPwd"
+                  />
+                </template>
+              </q-input>
 
               <div>
                 <q-btn label="Salvar" type="submit" color="primary" />
@@ -92,7 +100,8 @@ export default {
         name: null,
         email: null,
         password: null
-      }
+      },
+      isPwd: true
     }
   },
   methods: {

@@ -32,13 +32,22 @@
               val => val.length <= 255 || 'Use no máximo 255 caracteres'
             ]"
           />
+
           <q-input
-            filled
-            v-model="record.password"
-            label="Senha"
-            lazy-rules
-            hint="Preencha apenas se desejar alterar a senha."
-          />
+                v-model="record.password"
+                filled
+                :type="isPwd ? 'password' : 'text'"
+                label="Senha *"
+                hint="Preencha apenas se deseja alterar a senha"
+                >
+                <template v-slot:append>
+                  <q-icon
+                    :name="isPwd ? 'visibility_off' : 'visibility'"
+                    class="cursor-pointer"
+                    @click="isPwd = !isPwd"
+                  />
+                </template>
+              </q-input>
 
           <div>
             <q-btn label="Salvar" type="submit" color="primary" />
@@ -55,7 +64,8 @@ export default {
   name: 'ProfilePage',
   data () {
     return {
-      record: {}
+      record: {},
+      isPwd: true
     }
   },
   methods: {
