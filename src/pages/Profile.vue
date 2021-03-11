@@ -71,13 +71,21 @@ export default {
   methods: {
     ...mapActions('profile', ['show', 'update']),
     loadRecord () {
+      this.$q.loading.show()
       this.show()
         .then(res => {
+          this.$q.loading.hide()
           this.record = res.data
         })
-        .catch(err => console.error(err.data.message))
+        .catch(err => {
+          this.$q.loading.hide()
+          if (err) {
+            this.$q.notify({ color: 'negative', position: 'top', message: 'Erro ao consultar dados.' })
+          }
+        })
     },
     onSubmit () {
+      this.$q.loading.show()
       const payload = {
         name: this.record.name,
         email: this.record.email,
@@ -85,6 +93,7 @@ export default {
       }
       this.update(payload)
         .then(res => {
+          this.$q.loading.hide()
           this.$q.notify({
             color: 'positive',
             message: 'Perfil atualizado.',
@@ -93,6 +102,7 @@ export default {
           })
         })
         .catch(err => {
+          this.$q.loading.hide()
           if (err) {
             if (err.status === 422) {
               console.log(err.data.errors)

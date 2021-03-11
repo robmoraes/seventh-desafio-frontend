@@ -66,14 +66,17 @@ export default {
   methods: {
     ...mapActions('users', ['show', 'update']),
     loadRecord (id) {
+      this.$q.loading.show()
       this.show(id)
         .then(res => {
+          this.$q.loading.hide()
           this.record = res.data
           this.record.roles.forEach(el => {
             this.rolesSelecteds.push(el.id)
           })
         })
         .catch(err => {
+          this.$q.loading.hide()
           if (err) {
             this.$q.notify({
               color: 'negative',
@@ -85,6 +88,7 @@ export default {
         })
     },
     onSubmit () {
+      this.$q.loading.show()
       const payload = {
         id: this.record.id,
         name: this.record.name,
@@ -94,6 +98,7 @@ export default {
       }
       this.update(payload)
         .then(res => {
+          this.$q.loading.hide()
           this.$q.notify({
             color: 'positive',
             message: 'Usuário atualizado.',
@@ -103,6 +108,7 @@ export default {
           this.$router.push('/admin/security/users')
         })
         .catch(err => {
+          this.$q.loading.hide()
           if (err) {
             if (err.status === 422) {
               console.log(err.data.errors)

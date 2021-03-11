@@ -113,12 +113,15 @@ export default {
       this.record = []
     },
     insertRecord () {
+      this.$q.loading.show()
       this.insert(this.record)
         .then(res => {
+          this.$q.loading.hide()
           this.$q.notify({ color: 'positive', message: 'Registro incluído!' })
           this.$root.$emit('hideDialogRegister')
         })
         .catch(err => {
+          this.$q.loading.hide()
           if (err) {
             if (err.status === 422) {
               console.log(err.data.errors)
